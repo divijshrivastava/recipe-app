@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../../model/recipe';
-import { Router } from '../../../../node_modules/@angular/router';
 import { RecipeService } from '../../services/recipe.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-list',
@@ -75,9 +75,10 @@ export class RecipeListComponent implements OnInit {
   public toggleBackground() {
     this.dark_background = !this.dark_background;
   }
+
   public userSelectedRecipe(recipe_id: number) {
-    console.log('inside recipe-list: ' + recipe_id);
-    this.router.navigateByUrl('recipes/' + recipe_id);
+    console.log('Navigating to: ', `/recipes/${recipe_id}`);
+    this.router.navigate([`/recipes`, recipe_id]);
   }
 
   public addNewRecipe(): void {

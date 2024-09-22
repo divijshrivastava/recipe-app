@@ -3,6 +3,7 @@ import { Recipe } from '../../model/recipe';
 import { RecipeService } from '../../services/recipe.service';
 import { Router } from '../../../../node_modules/@angular/router';
 import { AbstractControl, ValidatorFn, FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FileUploadService } from '../../services/file-upload.service';
 @Component({
   selector: 'app-edit-new-recipe',
   templateUrl: './edit-new-recipe.component.html',
@@ -47,7 +48,7 @@ export class EditNewRecipeComponent implements OnInit {
     this.recipeForm = new FormGroup(fg);
   }
 
-  constructor(private recipeService: RecipeService, private router: Router) {
+  constructor(private recipeService: RecipeService, private router: Router, private fileUploadService: FileUploadService) {
     this.recipe_in_progress = new Recipe(1, '', '', 1, 1, [], [], "", []);
     this.disabled_add_recipe_button = true;
     this.instruction_recipe_photos = [];
@@ -77,6 +78,9 @@ export class EditNewRecipeComponent implements OnInit {
 
       reader.onload = (rdr) => {
         this.instruction_recipe_photos[i] = reader.result;
+        this.fileUploadService.uploadFile(event.target.files[0]).subscribe((resp)=>
+          console.log(resp)
+        )
         console.log('Inside readInstUrl, instruction_recipe_photos[' + i + ']: ' + this.instruction_recipe_photos[i]);
       };
       reader.readAsDataURL(event.target.files[0]);
