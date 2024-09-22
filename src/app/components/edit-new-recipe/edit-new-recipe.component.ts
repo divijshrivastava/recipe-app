@@ -92,6 +92,8 @@ export class EditNewRecipeComponent implements OnInit {
   }
 
   addRecipeClicked() {
+
+      alert("This functionality will be available soon!")
     this.recipeService.addRecipe(this.recipe_in_progress,
       {
         cover_photo: this.cover_photo_for_upload,

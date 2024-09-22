@@ -1,6 +1,11 @@
 h1{
     font-size: 160%;
 }
+.container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
 
 div.cover-photo-holder img {
   width: 300px;

@@ -1,43 +1,164 @@
-div.instruction input.form-control {
-    width: 60%;
-    display: inline;
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
   }
   
-  div.instruction {
-    margin-bottom: 7px;
+  /* Form styles */
+  form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
   }
   
-  .newrecipe {
-    float: left;
-    width: 550px;
+  h4 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+ 
+ input{
+    margin-bottom: 15px;
+    display:inline;
+ } 
+
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  textarea {
+    height: 100px;
+  }
+  
+  .input-group-addon {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 0 4px 4px 0;
+    padding: 10px;
+  }
+  
+  /* Cover photo styles */
+  .cover-photo-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    text-align: center;
+    margin-bottom: 20px;
   }
   
   .cover-photo-holder img {
-    width: 300px;
-    height: 300px;
-    border: 0px;
+    width:200px;
+    height:200px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
   }
   
-  .cover-photo-holder{
-    float:right;
+  /* Ingredients and Instructions styles */
+  .ingredient,
+  .instruction {
+    margin-bottom: 10px;
+  }
+  
+  .ingredient input,
+  .instruction input {
+    margin-right: 10px;
+  }
+  
+  /* Button styles */
+  .btn {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+  }
+  
+  .btn-primary:active {
+    background-color: #2473a5;
+    transform: translateY(0);
+  }
+
+  .btn-warning{
+    background-color:#a94442;
+    color:white;
+  }
+
+  
+  .btn-warning:hover {
+    background-color: #a94442;
+    transform: translateY(-2px);
+  }
+  
+  .btn-warning:active {
+    background-color: #a94442;
+    transform: translateY(0);
+  }
+
+  label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 18px;
+    position: relative;
+    padding-left: 15px;
+  }
+  
+  .add-recipe{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+ .instruction{
+    display:block;
+
+ }
+ .ingredient{
+    display:block;
+ } 
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
     
-  }
-  
-  div.add-ingredient input,
-  div.add-instruction input {
-    width: 50px;
-  }
-  
-  @media(min-width: 850px) {
-    div.cover-photo-holder img {
-      float: right;
+    form {
+      padding: 20px;
     }
   }
   
-  .ingredient {
-    font-weight: 100%;
-  }
-  
+  /* Form validation styles */
   input.ng-valid,
   textarea.ng-valid {
     border-left: 5px solid #42a948;
@@ -47,4 +168,3 @@ div.instruction input.form-control {
   textarea.ng-invalid {
     border-left: 5px solid #a94442;
   }
-  
